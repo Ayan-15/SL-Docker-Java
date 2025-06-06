@@ -1,0 +1,26 @@
+# Another docker file: 
+
+# Stage 1: Build stage
+# FROM gradle:8.1.1-jdk11 as build
+FROM amazoncorretto:11
+
+# Workspace
+WORKDIR /app
+
+# COPY all the sources
+COPY . .
+
+# RUN gradle during image build
+RUN gradle clean fatJar
+
+# Stage 2: Runtime stage - this is during run
+# FROM eclipse-temurin:11-jdk
+FROM amazoncorretto:11
+
+# Workspace
+WORKDIR /app
+
+# Copy the jar from inside the image to the image root 
+COPY --from=build /app/build/libs/01_Project_SL_gradle-all.jar app.jar
+
+ENTRYPOINT ["java", "-jar", "app.jar"]

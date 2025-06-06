@@ -1,0 +1,12 @@
+# take JAVA 11
+# FROM eclipse-temurin:11-jdk
+FROM amazoncorretto:11
+
+# Workspace 
+WORKDIR /app
+
+# Copies the fat jar with all dependencies inside during docker image build
+COPY build/libs/01_Project_SL_gradle-all.jar app.jar
+
+# Run at the app.jar when the container is executed 
+ENTRYPOINT ["java", "-jar", "app.jar"]
