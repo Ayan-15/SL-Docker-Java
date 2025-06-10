@@ -12,7 +12,7 @@ It has 5 .java files -
 - Built with JAVA 11 - `build.gradle.kts` can be referred. 
 - Root project name is - `01_Project_SL_gradle`
 ## Documentation details 
-UML is built on Umlet application
+UML is built on Umlet application (free open source UML designing application - [https://umlet.com/])
 UML `.pdf` and `.uxf` is present under root folder 
 
 ## How to run this project
