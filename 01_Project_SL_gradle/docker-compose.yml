@@ -1,0 +1,16 @@
+version: "3.7"
+
+services:
+  yamin-gym-app:
+# The . means take the Dockerfile available in that location. 
+    build: . 
+##  ==> This is another way of doing 
+#    build:
+#      context: .
+#      dockerfile: Dockerfile
+    container_name: yamin-gym-app-container
+#    ports:
+#      - "8080:8080"  # Mapping to port is not possible because it needs user input. 
+    stdin_open: true  # Allow user input
+    tty: true        # Allocate pseudo tty for interactive mode. 
+    restart: unless-stopped
