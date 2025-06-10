@@ -13,4 +13,9 @@ It has 5 .java files -
 - Root project name is - `01_Project_SL_gradle`
 ## Documentation details 
 UML is built on Umlet application
-UML `.pdf` and `.uxf` is present under root folder  
+UML `.pdf` and `.uxf` is present under root folder 
+
+## How to run this project
+- Now docker-compose.yml file is added.
+- So clone the project and simply run `docker compose run --rm yamin-gym-app`. Actually, the service name is `yamin-gym-app`
+- Please note no port is mapped as it is an interactive program - it accepts user input so you cannot run it as `docker compose up --build` because it wont attach any interactive terminal. 
